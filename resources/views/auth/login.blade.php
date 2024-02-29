@@ -33,17 +33,18 @@
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex justify-between my-5">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-900 rounded-md focus:outline-none dark:focus:ring-offset-gray-800"
-                    href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
+                <x-link :href="route('register')">
+                    ¡Regístrate!
+                </x-link>
+                <x-link :href="route('password.request')">
+                    ¿Olivaste tu contraseña?
+                </x-link>
             @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
         </div>
+        <x-primary-button class="ms-3">
+            {{ __('Log in') }}
+        </x-primary-button>
     </form>
 </x-guest-layout>
