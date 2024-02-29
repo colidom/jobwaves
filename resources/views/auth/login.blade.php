@@ -15,7 +15,7 @@
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="__('Contraseña')" />
 
             <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
                 autocomplete="current-password" />
@@ -29,7 +29,7 @@
                 <input id="remember_me" type="checkbox"
                     class="rounded dark:bg-gray-100 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-100"
                     name="remember">
-                <span class="ms-2 text-sm text-gray-700 dark:text-gray-700">{{ __('Remember me') }}</span>
+                <span class="ms-2 text-sm text-gray-700 dark:text-gray-700">{{ __('Recuérdame') }}</span>
             </label>
         </div>
 
@@ -43,8 +43,8 @@
                 </x-link>
             @endif
         </div>
-        <x-primary-button class="ms-3">
-            {{ __('Log in') }}
+        <x-primary-button class="w-full justify-center">
+            {{ __('Iniciar sesión') }}
         </x-primary-button>
     </form>
 </x-guest-layout>
