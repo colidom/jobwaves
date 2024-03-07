@@ -9,6 +9,13 @@ use Livewire\Component;
 class CreateVacancy extends Component
 {
     public $title;
+    public $salary;
+    public $category;
+    public $company_name;
+    public $end_date;
+    public $job_description;
+    public $image;
+
     protected $rules = [
         'title' => 'required|string',
         'salary' => 'required',

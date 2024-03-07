@@ -4,7 +4,11 @@
         <x-input-label for="title" :value="__('Titulo')" />
         <x-text-input id="title" class="block mt-1 w-full" type="text" wire:model="title" :value="old('title')"
             placeholder="Titulo Vacante" />
-        <x-input-error :messages="$errors->get('title')" class="mt-2" />
+
+        @error('title')
+            <livewire:show-alert :message="$message" />
+        @enderror
+
     </div>
 
     <!-- Salario -->
@@ -17,7 +21,9 @@
                 <option value="{{ $salario->id }}">{{ $salario->salario }}</option>
             @endforeach
         </select>
-        <x-input-error :messages="$errors->get('title')" class="mt-2" />
+        @error('salary')
+            <livewire:show-alert :message="$message" />
+        @enderror
     </div>
 
     <!-- Categoría -->
@@ -30,7 +36,9 @@
                 <option value="{{ $categoria->id }}">{{ $categoria->categoria }}</option>
             @endforeach
         </select>
-        <x-input-error :messages="$errors->get('title')" class="mt-2" />
+        @error('category')
+            <livewire:show-alert :message="$message" />
+        @enderror
     </div>
 
     <!-- Nombre empresa -->
@@ -38,7 +46,9 @@
         <x-input-label for="company_wire:model" :value="__('Empresa')" />
         <x-text-input id="company_name" class="block mt-1 w-full" type="text" wire:model="company_name"
             :value="old('company_name')" placeholder="Nombre de la Empresa" />
-        <x-input-error :messages="$errors->get('company_name')" class="mt-2" />
+        @error('company_name')
+            <livewire:show-alert :message="$message" />
+        @enderror
     </div>
 
     <!-- Último día -->
@@ -46,7 +56,9 @@
         <x-input-label for="end_date" :value="__('Último día para inscribirse')" />
         <x-text-input id="end_date" class="block mt-1 w-full" type="date" wire:model="end_date"
             :value="old('end_date')" />
-        <x-input-error :messages="$errors->get('end_date')" class="mt-2" />
+        @error('end_date')
+            <livewire:show-alert :message="$message" />
+        @enderror
     </div>
 
     <!-- Descripción -->
@@ -56,14 +68,18 @@
             class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full h-72"
             type="text" wire:model="job_description" :value="old('job_description')"
             placeholder="Descripción general del puesto de trabajo"></textarea>
-        <x-input-error :messages="$errors->get('job_description')" class="mt-2" />
+        @error('job_description')
+            <livewire:show-alert :message="$message" />
+        @enderror
     </div>
 
     <!-- Imagen -->
     <div>
         <x-input-label for="image" :value="__('Imagen')" />
         <x-text-input id="image" class="block mt-1 w-full" type="file" wire:model="image" />
-        <x-input-error :messages="$errors->get('image')" class="mt-2" />
+        @error('image')
+            <livewire:show-alert :message="$message" />
+        @enderror
     </div>
 
     <x-primary-button class="w-full justify-center">Crear puesto</x-primary-button>
