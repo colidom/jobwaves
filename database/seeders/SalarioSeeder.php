@@ -16,57 +16,57 @@ class SalarioSeeder extends Seeder
     public function run()
     {
         DB::table('salarios')->insert([
-            'salario' => '€0 - €499',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
+            'salario' => '0€ - 19.999€',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         DB::table('salarios')->insert([
-            'salario' => '€500 - €749',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
+            'salario' => '20.000€ - 29.999€',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         DB::table('salarios')->insert([
-            'salario' => '€750 - €999',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
+            'salario' => '30.000€ - 39.999€',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         DB::table('salarios')->insert([
-            'salario' => '€1000 - €1499',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
+            'salario' => '40.000€ - 49.999€',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         DB::table('salarios')->insert([
-            'salario' => '€1500 - €1999',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
+            'salario' => '50.000€ - 59.999€',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         DB::table('salarios')->insert([
-            'salario' => '€2000 - €2499',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
+            'salario' => '60.000€ - 69.999€',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         DB::table('salarios')->insert([
-            'salario' => '€2500 - €2999',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
+            'salario' => '70.000€ - 79.999€',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         DB::table('salarios')->insert([
-            'salario' => '€3000 - €4999',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
+            'salario' => '80.000€ - 99.999€',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         DB::table('salarios')->insert([
-            'salario' => '+€5000',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
+            'salario' => '+100.000€',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
     }
 }
