@@ -9,7 +9,7 @@
 
     <!-- Salario -->
     <div>
-        <x-input-label for="salary" :value="__('Salario')" />
+        <x-input-label for="salary" :value="__('Rango salarial (anual)')" />
         <select name="salary" id="salary"
             class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full">
             <option>-- Seleccione --</option>
