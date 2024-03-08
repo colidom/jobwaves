@@ -2,9 +2,10 @@
 
 namespace App\Livewire;
 
-use App\Models\Category;
 use App\Models\Salary;
+use App\Models\Vacancy;
 use Livewire\Component;
+use App\Models\Category;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 class CreateVacancy extends Component
@@ -46,9 +47,19 @@ class CreateVacancy extends Component
 
         // Almacenar la imagen
         $image = $this->image->store('public/vacancies');
-        $imgName = str_replace('public/vacancies/', '', $image);
+        $data['image'] = str_replace('public/vacancies/', '', $image);
 
         // Crear vacante
+        Vacancy::create([
+            'title' => $data['title'],
+            'salary_id' => $data['salary'],
+            'category_id' => $data['category'],
+            'company_name' => $data['company_name'],
+            'end_date' => $data['end_date'],
+            'job_description' => $data['job_description'],
+            'image' => $data['image'],
+            'user_id' => auth()->user()->id
+        ]);
 
         // Crear mensaje
 

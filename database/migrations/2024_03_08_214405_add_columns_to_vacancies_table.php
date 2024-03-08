@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('vacantes', function (Blueprint $table) {
+        Schema::table('vacancies', function (Blueprint $table) {
             $table->string('title');
             $table->foreignId('salary_id')->constrained()->onDelete('cascade');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
@@ -29,10 +29,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('vacantes', function (Blueprint $table) {
-            $table->dropForeign('vacantes_user_id_foreign');
-            $table->dropForeign('vacantes_salary_id_foreign');
-            $table->dropForeign('vacantes_category_id_foreign');
+        Schema::table('vacancies', function (Blueprint $table) {
+            $table->dropForeign('vacancies_user_id_foreign');
+            $table->dropForeign('vacancies_salary_id_foreign');
+            $table->dropForeign('vacancies_category_id_foreign');
             $table->dropColumn([
                 'title', 'salary_id', 'category_id', 'company_name', 'end_date',
                 'job_description', 'image', 'published', 'user_id'
