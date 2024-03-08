@@ -29,6 +29,17 @@ class CreateVacancy extends Component
         'image' => 'required|image|max:1024'
     ];
 
+    protected $messages = [
+        'title.required' => 'El campo título es requerido.',
+        'title.string' => 'El campo título debe ser una cadena de texto.',
+        'salary.required' => 'El campo salario es requerido.',
+        'category.required' => 'El campo categoría es requerido.',
+        'company_name.required' => 'El campo nombre de la empresa es requerido.',
+        'end_date.required' => 'El campo fecha de finalización es requerido.',
+        'job_description.required' => 'El campo descripción del trabajo es requerido.',
+        'image.required' => 'El campo imagen es requerido.',
+    ];
+
     public function createVacancy()
     {
         $data = $this->validate();
