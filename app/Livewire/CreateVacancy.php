@@ -26,7 +26,7 @@ class CreateVacancy extends Component
         'company_name' => 'required',
         'end_date' => 'required',
         'job_description' => 'required',
-        'image' => 'required|image|max:1024'
+        'image' => 'required|image|max:2048'
     ];
 
     protected $messages = [
@@ -43,6 +43,17 @@ class CreateVacancy extends Component
     public function createVacancy()
     {
         $data = $this->validate();
+
+        // Almacenar la imagen
+        $image = $this->image->store('public/vacancies');
+        $imgName = str_replace('public/vacancies/', '', $image);
+
+        // Crear vacante
+
+        // Crear mensaje
+
+
+        // Redireccionar usuario
     }
 
     public function render()
