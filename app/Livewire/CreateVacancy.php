@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
-use App\Models\Categoria;
-use App\Models\Salarie;
+use App\Models\Category;
+use App\Models\Salary;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 
@@ -48,12 +48,12 @@ class CreateVacancy extends Component
     public function render()
     {
         // Consultar DB
-        $salaries = Salarie::all();
-        $categorias = Categoria::all();
+        $salaries = Salary::all();
+        $categories = Category::all();
 
         return view('livewire.create-vacancy', [
             'salaries' => $salaries,
-            'categorias' => $categorias
+            'categories' => $categories
         ]);
     }
 }

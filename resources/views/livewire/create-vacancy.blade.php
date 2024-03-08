@@ -17,8 +17,8 @@
         <select wire:model="salary" id="salary"
             class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full">
             <option>-- Seleccione --</option>
-            @foreach ($salaries as $salarie)
-                <option value="{{ $salarie->id }}">{{ $salarie->salarie }}</option>
+            @foreach ($salaries as $salary)
+                <option value="{{ $salary->id }}">{{ $salary->salary }}</option>
             @endforeach
         </select>
         @error('salary')
@@ -32,8 +32,8 @@
         <select wire:model="category" id="category"
             class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full">
             <option>-- Seleccione --</option>
-            @foreach ($categorias as $categoria)
-                <option value="{{ $categoria->id }}">{{ $categoria->categoria }}</option>
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->category }}</option>
             @endforeach
         </select>
         @error('category')
