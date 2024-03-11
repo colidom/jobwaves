@@ -17,7 +17,7 @@
                         uppercase text-center">
                         Candidatos
                     </a>
-                    <a href=""
+                    <a href="{{ route('vacantes.edit', $vacancy->id) }}"
                         class="bg-blue-800 hover:bg-blue-700 py-2 px-4 rounded-lg text-white text-sm font-bold
                         uppercase text-center">
                         Editar
