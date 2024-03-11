@@ -13,17 +13,17 @@
 
                 <div class="flex flex-col md:flex-row items-stretch gap-3 mt-5 md:mt-0">
                     <a href=""
-                        class="bg-slate-800 hover:bg-slate-900 py-2 px-4 rounded-lg text-white text-sm font-bold
+                        class="bg-slate-800 hover:bg-slate-700 py-2 px-4 rounded-lg text-white text-sm font-bold
                         uppercase text-center">
                         Candidatos
                     </a>
                     <a href=""
-                        class="bg-blue-800 hover:bg-blue-900 py-2 px-4 rounded-lg text-white text-sm font-bold
+                        class="bg-blue-800 hover:bg-blue-700 py-2 px-4 rounded-lg text-white text-sm font-bold
                         uppercase text-center">
                         Editar
                     </a>
                     <a href=""
-                        class="bg-red-600 hover:bg-red-700 py-2 px-4 rounded-lg text-white text-sm font-bold
+                        class="bg-red-600 hover:bg-red-500 py-2 px-4 rounded-lg text-white text-sm font-bold
                         uppercase text-center">
                         Eliminar
                     </a>
