@@ -66,8 +66,7 @@
         <x-input-label for="job_description" :value="__('Descripción')" />
         <textarea id="job_description"
             class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full h-72"
-            type="text" wire:model="job_description" :value="old('job_description')"
-            placeholder="Descripción general del puesto de trabajo"></textarea>
+            type="text" wire:model="job_description" placeholder="Descripción general del puesto de trabajo"></textarea>
         @error('job_description')
             <livewire:show-alert :message="$message" />
         @enderror
@@ -78,16 +77,15 @@
         <x-input-label for="image" :value="__('Imagen')" />
         <x-text-input id="image" class="block mt-1 w-full" type="file" wire:model="image" accept="image/*" />
 
-        {{-- <div class="my-5 w-80">
-            @if ($image)
-                <img src="{{ $image->temporaryUrl() }}" alt="Imagen subida">
-            @endif
-        </div> --}}
+        <div class="my-5 w-80">
+            <x-input-label :value="__('Imagen actual')" />
+            <img src="{{ asset('storage/vacancies/' . $image) }}" alt="{{ 'Imagen vacante' . $title }}">
+        </div>
 
         @error('image')
             <livewire:show-alert :message="$message" />
         @enderror
     </div>
 
-    <x-primary-button class="w-full justify-center">Crear puesto</x-primary-button>
+    <x-primary-button class="w-full justify-center">Guardar cambios</x-primary-button>
 </form>
