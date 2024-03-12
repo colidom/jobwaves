@@ -1,4 +1,4 @@
-<form action="" class="md:w-1/2 space-y-5" wire:submit.prevent='createVacancy'>
+<form action="" class="md:w-1/2 space-y-5" wire:submit.prevent='editVacancy'>
     <!-- Titulo -->
     <div>
         <x-input-label for="title" :value="__('Titulo')" />

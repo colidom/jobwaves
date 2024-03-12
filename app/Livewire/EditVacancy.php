@@ -18,6 +18,16 @@ class EditVacancy extends Component
     public $job_description;
     public $image;
 
+    protected $rules = [
+        'title' => 'required|string',
+        'salary' => 'required',
+        'category' => 'required',
+        'company_name' => 'required',
+        'end_date' => 'required',
+        'job_description' => 'required'
+    ];
+
+    // Muestra los datos en el formulario de la instancia Vacancy
     public function mount(Vacancy $vacancy)
     {
         $this->title = $vacancy->title;
@@ -27,6 +37,11 @@ class EditVacancy extends Component
         $this->end_date = Carbon::parse($vacancy->end_date)->format('Y-m-d');
         $this->job_description = $vacancy->job_description;
         $this->image = $vacancy->image;
+    }
+
+    public function editVacancy()
+    {
+        $data = $this->validate();
     }
 
     public function render()
