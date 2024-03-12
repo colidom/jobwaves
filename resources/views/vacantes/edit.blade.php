@@ -12,6 +12,7 @@
                         Oferta de empleo: {{ $vacancy->title }}
                     </h1>
                     <div class="md:flex md:justify-center p-5">
+                        <livewire:edit-vacancy />
                     </div>
                 </div>
             </div>
