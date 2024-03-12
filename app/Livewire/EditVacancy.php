@@ -55,7 +55,7 @@ class EditVacancy extends Component
         $vacancy->salary_id = $data['salary'];
         $vacancy->category_id = $data['category'];
         $vacancy->company_name = $data['company_name'];
-        $vacancy->end_date = Carbon::createFromFormat('Y-m-d', $data['end_date'])->format('Y-m-d');
+        $vacancy->end_date = $data['end_date'];
         $vacancy->job_description = $data['job_description'];
 
         // Guardar la vacante
