@@ -6,7 +6,9 @@ use App\Models\Category;
 use App\Models\Salary;
 use App\Models\Vacancy;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EditVacancy extends Component
 {
@@ -18,6 +20,9 @@ class EditVacancy extends Component
     public $end_date;
     public $job_description;
     public $image;
+    public $new_image;
+
+    use WithFileUploads;
 
     protected $rules = [
         'title' => 'required|string',
@@ -25,7 +30,8 @@ class EditVacancy extends Component
         'category' => 'required',
         'company_name' => 'required',
         'end_date' => 'required',
-        'job_description' => 'required'
+        'job_description' => 'required',
+        'new_image' => 'nullable|image|max:2048'
     ];
 
     // Muestra los datos en el formulario de la instancia Vacancy
@@ -44,8 +50,15 @@ class EditVacancy extends Component
     public function editVacancy()
     {
         $data = $this->validate();
+        $vacancy = Vacancy::find($this->vacancy_id);
 
         // Revisar si hay una nueva imagen
+        if ($this->new_image) {
+            $image = $this->new_image->store('public/vacancies');
+            $data['image'] =  str_replace('public/vacancies/', '', $image);
+            // Eliminamos la imagen
+            Storage::delete('public/vacancies/' . $vacancy->image);
+        }
 
         // Encontrar vacante a editar
         $vacancy = Vacancy::Find($this->vacancy_id);
@@ -57,6 +70,7 @@ class EditVacancy extends Component
         $vacancy->company_name = $data['company_name'];
         $vacancy->end_date = $data['end_date'];
         $vacancy->job_description = $data['job_description'];
+        $vacancy->image = $data['image'] ?? $vacancy->image;
 
         // Guardar la vacante
         $vacancy->save();
