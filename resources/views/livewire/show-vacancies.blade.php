@@ -22,11 +22,11 @@
                         uppercase text-center">
                         Editar
                     </a>
-                    <a href=""
+                    <button wire:click="$dispatch('showAlert', {{ $vacancy->id }})" type="button"
                         class="bg-red-600 hover:bg-red-500 py-2 px-4 rounded-lg text-white text-sm font-bold
                         uppercase text-center">
                         Eliminar
-                    </a>
+                    </button>
                 </div>
             </div>
         @empty
@@ -42,23 +42,28 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        Swal.fire({
-            title: 'Confirmar eliminación',
-            text: "¡No podrás revertir esta acción!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, eliminar!',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(
-                    'Eliminado!',
-                    'Vacante eliminada.',
-                    'success'
-                )
-            }
-        })
+        document.addEventListener('DOMContentLoaded', function() {
+            @this.on('showAlert', vacancyId => {
+                Swal.fire({
+                    title: "{{ __('Delete Vacancy') }}",
+                    text: "{{ __('A deleted vacancy cannot be restored.') }}",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    cancelButtonText: "{{ __('Cancel') }}",
+                    confirmButtonText: "{{ __('Yes') }}"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        @this.call('deleteVacancy', vacancyId);
+                        Swal.fire({
+                            title: "{{ __('actions.done') }}",
+                            text: "{{ __('The vacancy has been deleted.') }}",
+                            icon: "success"
+                        });
+                    }
+                });
+            });
+        });
     </script>
 @endpush
