@@ -45,21 +45,22 @@
         document.addEventListener('DOMContentLoaded', function() {
             @this.on('showAlert', vacancyId => {
                 Swal.fire({
-                    title: "{{ __('Delete Vacancy') }}",
-                    text: "{{ __('A deleted vacancy cannot be restored.') }}",
-                    icon: "warning",
+                    title: '¿Eliminar Vacante?',
+                    text: "Una Vacante eliminada no se puede recuperar:(",
+                    icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    cancelButtonText: "{{ __('Cancel') }}",
-                    confirmButtonText: "{{ __('Yes') }}"
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, eliminar!',
+                    cancelButtonText: 'Cancelar'
                 }).then((result) => {
                     if (result.isConfirmed) {
+                        // ELiminar vacante
                         @this.call('deleteVacancy', vacancyId);
                         Swal.fire({
-                            title: "{{ __('actions.done') }}",
-                            text: "{{ __('The vacancy has been deleted.') }}",
-                            icon: "success"
+                            title: 'Se eliminó la Vacante',
+                            text: 'Eliminado correctamente',
+                            icon: 'success'
                         });
                     }
                 });
