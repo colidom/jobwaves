@@ -79,7 +79,7 @@ class EditVacancy extends Component
         session()->flash('message', 'Oferta de trabajo actualizada correctamente');
 
         // Redireccionar
-        return redirect()->route('vacantes.index');
+        return redirect()->route('vacancies.index');
     }
 
     public function render()

@@ -12,7 +12,7 @@ class VacancyController extends Controller
      */
     public function index()
     {
-        return view('vacantes.index');
+        return view('vacancies.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class VacancyController extends Controller
      */
     public function create()
     {
-        return view('vacantes.create');
+        return view('vacancies.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class VacancyController extends Controller
 
         $this->authorize('update', $vacancy);
 
-        return view('vacantes.edit', [
+        return view('vacancies.edit', [
             'vacancy' => $vacancy
         ]);
     }

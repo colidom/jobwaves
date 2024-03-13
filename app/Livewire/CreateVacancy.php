@@ -65,7 +65,7 @@ class CreateVacancy extends Component
         session()->flash('message', 'La vacante se ha creado correctamente');
 
         // Redireccionar usuario
-        return redirect()->route('vacantes.index');
+        return redirect()->route('vacancies.index');
     }
 
     public function render()
