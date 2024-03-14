@@ -12,11 +12,12 @@ class ShowVacancies extends Component
 
     protected $listeners = ['deleteVacancy'];
 
-    public function deleteVacancy(Vacancy $vacancy)
+    public function deleteVacancy(Vacancy $vacancyId)
     {
-        dd('Eliminando...');
+        dd($vacancyId);
         //$vacancy->delete();
     }
+
     public function render()
     {
         $vacancies = Vacancy::where('user_id', auth()->user()->id)->paginate(self::ELEMENTS_BY_PAGE);

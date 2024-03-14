@@ -22,7 +22,7 @@
                         uppercase text-center">
                         Editar
                     </a>
-                    <button wire:click="$dispatch('showAlert', {{ $vacancy->id }})" type="button"
+                    <button wire:click="$dispatch('showAlert', { vacancyId: {{ $vacancy->id }} })" type="button"
                         class="bg-red-600 hover:bg-red-500 py-2 px-4 rounded-lg text-white text-sm font-bold
                         uppercase text-center">
                         Eliminar
