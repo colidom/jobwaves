@@ -12,10 +12,9 @@ class ShowVacancies extends Component
 
     protected $listeners = ['deleteVacancy'];
 
-    public function deleteVacancy(Vacancy $vacancyId)
+    public function deleteVacancy(Vacancy $vacancy)
     {
-        dd($vacancyId);
-        //$vacancy->delete();
+        $vacancy->delete();
     }
 
     public function render()
