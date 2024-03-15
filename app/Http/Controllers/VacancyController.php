@@ -24,6 +24,16 @@ class VacancyController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     */
+    public function show(Vacancy $vacancy)
+    {
+        return view('vacancies.show', [
+            'vacancy' => $vacancy
+        ]);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Vacancy $vacancy)

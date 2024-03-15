@@ -3,7 +3,7 @@
         @forelse ($vacancies as $vacancy)
             <div class="p-6 bg-white border-b border-gray-200 md:flex md:justify-between items-center">
                 <div class="space-y-3">
-                    <a href="" class="text-xl font-bold hover:text-slate-700">
+                    <a href="{{ route('vacancies.show', $vacancy->id) }}" class="text-xl font-bold hover:text-slate-700">
                         {{ $vacancy->title }}
                     </a>
                     <p class="text-sm text-gray-600 font-bold">{{ $vacancy->company_name }}</p>
