@@ -12,10 +12,10 @@
                 <span class="normal-case font-normal">{{ $vacancy->end_date->toFormattedDateString() }}</span>
             </p>
             <p class="font-bold text-sm uppercase text-gray-800 my-3">Categoría:
-                <span class="normal-case font-normal">{{ $vacancy->category_id }}</span>
+                <span class="normal-case font-normal">{{ $vacancy->category->category }}</span>
             </p>
             <p class="font-bold text-sm uppercase text-gray-800 my-3">Salario:
-                <span class="normal-case font-normal">{{ $vacancy->salary_id }}</span>
+                <span class="normal-case font-normal">{{ $vacancy->salary->salary }}</span>
             </p>
         </div>
     </div>
