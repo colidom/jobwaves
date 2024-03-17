@@ -21,6 +21,7 @@ class VacancyController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Vacancy::class); // Previene el acceso a todo lo relacionao con este modelo
         return view('vacancies.create');
     }
 
