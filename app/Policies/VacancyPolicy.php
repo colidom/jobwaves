@@ -13,7 +13,7 @@ class VacancyPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return $user->rol === 2;
     }
 
     /**
