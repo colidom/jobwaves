@@ -40,4 +40,8 @@
             </p>
         </div>
     @endguest
+
+    @cannot('create', App\Models\Vacancy::class)
+        <livewire:enroll-in-vacancy />
+    @endcannot
 </div>
