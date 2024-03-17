@@ -30,4 +30,14 @@
             <p>{{ $vacancy->job_description }}</p>
         </div>
     </div>
+
+    @guest
+        <div class="mt-5 bg-gray-100 border border-dashed p-5 text-center">
+            <p>
+                ¿Deseas aplicar a esta oferta de empleo?
+                <a class="font-bold text-indigo-600" href="{{ route('register') }}">¡Regístrate ahora para poder enviar tu
+                    candidatura!</a>
+            </p>
+        </div>
+    @endguest
 </div>
