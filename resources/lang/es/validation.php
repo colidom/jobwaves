@@ -187,6 +187,7 @@ return [
     'attributes' => [
         'name' => 'nombre',
         'surname' => 'apellido',
+        'role' => 'rol',
         'password' => 'contraseña',
         'title' => 'título',
         'salary' => 'rango salarial',
