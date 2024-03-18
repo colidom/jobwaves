@@ -37,12 +37,12 @@
                 {{ __('¿Deseas aplicar a esta oferta de empleo?') }}
                 <a class="font-bold text-indigo-600"
                     href="{{ route('register') }}">{{ __('¡Regístrate ahora para poder enviar tu
-                                                                                candidatura!') }}</a>
+                                                                                                                                                                candidatura!') }}</a>
             </p>
         </div>
     @else
         @cannot('create', App\Models\Vacancy::class)
-            <livewire:enroll-in-vacancy />
+            <livewire:enroll-in-vacancy :vacancy="$vacancy" />
         @endcannot
     @endguest
 </div>
