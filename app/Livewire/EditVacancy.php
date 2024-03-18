@@ -76,7 +76,7 @@ class EditVacancy extends Component
         $vacancy->save();
 
         // Crear mensaje
-        session()->flash('message', 'Oferta de trabajo actualizada correctamente');
+        session()->flash('message', 'Oferta de empleo actualizada correctamente');
 
         // Redireccionar
         return redirect()->route('vacancies.index');
