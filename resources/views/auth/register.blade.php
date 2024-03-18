@@ -20,15 +20,15 @@
 
         <!-- Tipo de Cuenta-->
         <div class="mt-4">
-            <x-input-label for="rol" :value="__('¿Qué tipo de cuenta deseas crear?')" />
-            <select name="rol" id="rol"
+            <x-input-label for="role" :value="__('¿Qué tipo de cuenta deseas crear?')" />
+            <select name="role" id="role"
                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full"
                 required>
-                <option value="">--- Selecciona un rol ---</option>
+                <option value="">--- Seleccione un rol ---</option>
                 <option value="1">Desarrollador - Obtener empleo</option>
                 <option value="2">Reclutador - Publicar empleo</option>
             </select>
-            <x-input-error :messages="$errors->get('rol')" class="mt-2" />
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
         </div>
 
         <!-- Password -->
