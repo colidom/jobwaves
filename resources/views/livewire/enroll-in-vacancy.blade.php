@@ -6,5 +6,6 @@
             <x-input-label for="cv" :value="__('Currículum vitae (PDF)')" />
             <x-text-input id="cv" type="file" accept=".pdf" class="block mt-1 w-full" />
         </div>
+        <x-primary-button class="w-full justify-center">{{ __('Inscribirse') }}</x-primary-button>
     </form>
 </div>
