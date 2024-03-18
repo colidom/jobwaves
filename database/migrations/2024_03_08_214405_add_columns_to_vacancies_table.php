@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('company_name');
             $table->date('end_date');
-            $table->string('job_description');
+            $table->longText('job_description');
             $table->string('image');
             $table->boolean('published')->default(1);
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
