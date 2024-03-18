@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-200 dark:text-gray-900 leading-tight">
-            {{ __('Editar Vacante') }}
+            {{ __('Editar oferta de empleo') }}
         </h2>
     </x-slot>
     <div class="py-12">

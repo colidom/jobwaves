@@ -3,7 +3,7 @@
     <div>
         <x-input-label for="title" :value="__('Título')" />
         <x-text-input id="title" class="block mt-1 w-full" type="text" wire:model="title" :value="old('title')"
-            placeholder="Título de la vacante" />
+            placeholder="Título de la oferta de empleo" />
 
         @error('title')
             <livewire:show-alert :message="$message" />

@@ -3,7 +3,7 @@
     <div>
         <x-input-label for="title" :value="__('Título')" />
         <x-text-input id="title" class="block mt-1 w-full" type="text" wire:model="title" :value="old('title')"
-            placeholder="Título de la vacante" />
+            placeholder="Título de la oferta de empleo" />
 
         @error('title')
             <livewire:show-alert :message="$message" />
@@ -79,7 +79,7 @@
 
         <div class="my-5 w-80">
             <x-input-label :value="__('Imagen actual')" />
-            <img src="{{ asset('storage/vacancies/' . $image) }}" alt="{{ 'Imagen vacante' . $title }}">
+            <img src="{{ asset('storage/vacancies/' . $image) }}" alt="{{ 'Imagen oferta de empleo' . $title }}">
         </div>
 
         <div class="my-5 w-80">

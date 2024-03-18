@@ -38,7 +38,7 @@ class CreateVacancy extends Component
         $image = $this->image->store('public/vacancies');
         $data['image'] = str_replace('public/vacancies/', '', $image);
 
-        // Crear vacante
+        // Crear oferta de empleo
         Vacancy::create([
             'title' => $data['title'],
             'salary_id' => $data['salary'],
@@ -51,7 +51,7 @@ class CreateVacancy extends Component
         ]);
 
         // Crear mensaje
-        session()->flash('message', 'La vacante se ha creado correctamente');
+        session()->flash('message', 'La oferta de empleo se ha creado correctamente');
 
         // Redireccionar usuario
         return redirect()->route('vacancies.index');

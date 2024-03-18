@@ -60,7 +60,7 @@ class EditVacancy extends Component
             Storage::delete('public/vacancies/' . $vacancy->image);
         }
 
-        // Encontrar vacante a editar
+        // Encontrar oferta de empleo a editar
         $vacancy = Vacancy::Find($this->vacancy_id);
 
         // Asignar los valores
@@ -72,7 +72,7 @@ class EditVacancy extends Component
         $vacancy->job_description = $data['job_description'];
         $vacancy->image = $data['image'] ?? $vacancy->image;
 
-        // Guardar la vacante
+        // Guardar la oferta de empleo
         $vacancy->save();
 
         // Crear mensaje

@@ -55,7 +55,7 @@
                     cancelButtonText: 'Cancelar'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        // ELiminar vacante
+                        // ELiminar oferta de empleo
                         @this.call('deleteVacancy', vacancyId);
                         Swal.fire({
                             title: 'Oferta de empleo',
