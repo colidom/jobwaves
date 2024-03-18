@@ -186,7 +186,15 @@ return [
 
     'attributes' => [
         'name' => 'nombre',
-        'password' => 'contraseña'
+        'surname' => 'apellido',
+        'password' => 'contraseña',
+        'title' => 'título',
+        'salary' => 'rango salarial',
+        'category' => 'categoría',
+        'company' => 'empresa',
+        'end_date' => 'último día de inscripción',
+        'job_description' => 'descripción del puesto',
+        'image' => 'imagen',
     ],
 
 ];
