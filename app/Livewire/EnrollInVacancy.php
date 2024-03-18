@@ -38,6 +38,9 @@ class EnrollInVacancy extends Component
         // Crear notificación y enviar el email
 
         // Mostrar al usuario mensaje de OK
+        session()->flash('message', '¡Hemos recibido su CV correctamente!');
+
+        return redirect()->back();
     }
 
     public function render()
