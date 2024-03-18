@@ -3,7 +3,7 @@
     <div>
         <x-input-label for="title" :value="__('Título')" />
         <x-text-input id="title" class="block mt-1 w-full" type="text" wire:model="title" :value="old('title')"
-            placeholder="Título Vacante" />
+            placeholder="Título de la vacante" />
 
         @error('title')
             <livewire:show-alert :message="$message" />
@@ -45,7 +45,7 @@
     <div>
         <x-input-label for="company_wire:model" :value="__('Empresa')" />
         <x-text-input id="company_name" class="block mt-1 w-full" type="text" wire:model="company_name"
-            :value="old('company_name')" placeholder="Nombre de la Empresa" />
+            :value="old('company_name')" placeholder="Nombre de la empresa" />
         @error('company_name')
             <livewire:show-alert :message="$message" />
         @enderror
