@@ -1,11 +1,18 @@
 <div class="bg-gray-100 p-5 mt-10 flex flex-col justify-center items-center">
     <h3 class="text-center text-2xl font-bold my-4">{{ __('Inscribirse en esta oferta de empleo') }}</h3>
 
-    <form class="w-96 mt-5">
+    <form wire:submit.prevent='enrrollUser' class="w-96 mt-5">
         <div class="mb-4">
             <x-input-label for="cv" :value="__('Currículum vitae (PDF)')" />
-            <x-text-input id="cv" type="file" accept=".pdf" class="block mt-1 w-full" />
+            <x-text-input id="cv" type="file" accept=".pdf" class="block mt-1 w-full" wire:model="cv" />
         </div>
-        <x-primary-button class="w-full justify-center">{{ __('Inscribirse') }}</x-primary-button>
+
+        @error('cv')
+            <livewire:show-alert :message="$message" />
+        @enderror
+
+        <x-primary-button class="w-full justify-center mt-5">
+            {{ __('Inscribirse') }}
+        </x-primary-button>
     </form>
 </div>
