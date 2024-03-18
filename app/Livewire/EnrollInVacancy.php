@@ -3,9 +3,11 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EnrollInVacancy extends Component
 {
+    use WithFileUploads;
     public $cv;
 
     protected $rules = [
@@ -14,9 +16,11 @@ class EnrollInVacancy extends Component
 
     public function enrrollUser()
     {
-        $this->validate();
+        $data = $this->validate();
 
-        // Almacenar cv en disco duro
+        // Almacenar el cv
+        $cv = $this->cv->store('public/cv');
+        $data['cv'] = str_replace('public/cv/', '', $cv);
 
         // Crear la inscripción en oferta de empleo
 
