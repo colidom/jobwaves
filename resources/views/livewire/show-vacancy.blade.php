@@ -39,9 +39,9 @@
                     candidatura!</a>
             </p>
         </div>
+    @else
+        @cannot('create', App\Models\Vacancy::class)
+            <livewire:enroll-in-vacancy />
+        @endcannot
     @endguest
-
-    @cannot('create', App\Models\Vacancy::class)
-        <livewire:enroll-in-vacancy />
-    @endcannot
 </div>
