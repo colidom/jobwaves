@@ -7,7 +7,8 @@
                         {{ $vacancy->title }}
                     </a>
                     <p class="text-sm text-gray-600 font-bold">{{ $vacancy->company_name }}</p>
-                    <p class="text-sm text-gray-500">Puedes inscribirte hasta: {{ $vacancy->end_date->format('d/m/Y') }}
+                    <p class="text-sm text-gray-500">{{ __('Puedes inscribirte hasta:') }}
+                        {{ $vacancy->end_date->format('d/m/Y') }}
                     </p>
                 </div>
 
@@ -15,22 +16,22 @@
                     <a href=""
                         class="bg-slate-800 hover:bg-slate-700 py-2 px-4 rounded-lg text-white text-sm font-bold
                         uppercase text-center">
-                        Candidatos
+                        {{ __('Candidatos') }}
                     </a>
                     <a href="{{ route('vacancies.edit', $vacancy->id) }}"
                         class="bg-blue-800 hover:bg-blue-700 py-2 px-4 rounded-lg text-white text-sm font-bold
                         uppercase text-center">
-                        Editar
+                        {{ __('Editar') }}
                     </a>
                     <button wire:click="$dispatch('showAlert', { vacancyId: {{ $vacancy->id }} })" type="button"
                         class="bg-red-600 hover:bg-red-500 py-2 px-4 rounded-lg text-white text-sm font-bold
                         uppercase text-center">
-                        Eliminar
+                        {{ __('Eliminar') }}
                     </button>
                 </div>
             </div>
         @empty
-            <p class="p-3 text-center text-sm text-gray-600">No hay vacantes que mostrar.</p>
+            <p class="p-3 text-center text-sm text-gray-600">{{ __('No hay vacantes que mostrar.') }}</p>
         @endforelse
     </div>
     <div class="mt-10">

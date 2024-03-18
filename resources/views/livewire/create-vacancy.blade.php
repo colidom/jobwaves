@@ -16,7 +16,7 @@
         <x-input-label for="salary" :value="__('Rango salarial (anual)')" />
         <select wire:model="salary" id="salary"
             class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full">
-            <option>-- Seleccione --</option>
+            <option>{{ __('-- Seleccione --') }}</option>
             @foreach ($salaries as $salary)
                 <option value="{{ $salary->id }}">{{ $salary->salary }}</option>
             @endforeach
@@ -31,7 +31,7 @@
         <x-input-label for="category" :value="__('Categoría')" />
         <select wire:model="category" id="category"
             class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full">
-            <option>-- Seleccione --</option>
+            <option>{{ __('-- Seleccione --') }}</option>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->category }}</option>
             @endforeach
@@ -89,5 +89,5 @@
         @enderror
     </div>
 
-    <x-primary-button class="w-full justify-center">Crear puesto</x-primary-button>
+    <x-primary-button class="w-full justify-center">{{ __('Crear puesto') }}</x-primary-button>
 </form>
