@@ -22,7 +22,7 @@
 
     <div class="md:grid md:grid-cols-6 gap-4">
         <div class="md:col-span-2">
-            <img src="{{ asset('storage/vacancies/' . $vacancy->image) }}"
+            <img class="rounded-3xl" src="{{ asset('storage/vacancies/' . $vacancy->image) }}"
                 alt="{{ 'Imagen oferta de empleo' . $vacancy->title }}">
         </div>
         <div class="md:col-span-4">
