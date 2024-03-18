@@ -9,7 +9,7 @@
                 <span class="normal-case font-normal">{{ $vacancy->company_name }}</span>
             </p>
             <p class="font-bold text-sm uppercase text-gray-800 my-3">Último día para inscribirse:
-                <span class="normal-case font-normal">{{ $vacancy->end_date->toFormattedDateString() }}</span>
+                <span class="normal-case font-normal">{{ $vacancy->end_date->locale('es')->isoFormat('LL') }}</span>
             </p>
             <p class="font-bold text-sm uppercase text-gray-800 my-3">Categoría:
                 <span class="normal-case font-normal">{{ $vacancy->category->category }}</span>
