@@ -21,11 +21,11 @@
     </div>
 
     <div class="md:grid md:grid-cols-6 gap-4">
-        <div clas="md:col-span-2">
+        <div class="md:col-span-2">
             <img src="{{ asset('storage/vacancies/' . $vacancy->image) }}"
                 alt="{{ 'Imagen vacante' . $vacancy->title }}">
         </div>
-        <div clas="md:col-span-4">
+        <div class="md:col-span-4">
             <h2 class="text-2xl font-bold mb-5">Descripción: </h2>
             <p>{{ $vacancy->job_description }}</p>
         </div>
