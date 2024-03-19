@@ -16,7 +16,7 @@
                         <div class="p-5 border border-gray-200 lg:flex justify-between lg:items-center">
                             <div>
                                 <p>Tienes un nuevo candidato en:
-                                    <span class="font-bold">{{ $notification->data['vacancy_id'] }}</span>
+                                    <span class="font-bold">{{ $notification->data['vacancy_name'] }}</span>
                                 </p>
                                 <p>
                                     <span class="font-bold">{{ $notification->created_at->diffForHumans() }}</span>
