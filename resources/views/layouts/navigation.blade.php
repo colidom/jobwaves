@@ -134,9 +134,9 @@
                 </x-responsive-nav-link>
 
                 @if (auth()->user()->role === 2)
-                    <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-4 mt-3">
                         @if (auth()->user()->unreadNotifications->count() > 0)
-                            <div class="flex gap-2 items-center">
+                            <div class="flex gap-2 items-center mt-3">
                                 <!-- Ícono de campana cuando hay notificaciones -->
                                 <a class="ml-7 bg-indigo-600 hover:bg-indigo-600 rounded-full flex flex-col justify-center items-center text-sm font-extrabold relative p-1"
                                     href="{{ route('notifications') }}">
@@ -156,7 +156,7 @@
                             </div>
                         @else
                             <!-- Ícono de campana cuando no hay notificaciones -->
-                            <div class="flex gap-2 items-center">
+                            <div class="flex gap-2 items-center mt-3">
                                 <!-- Ícono de campana cuando hay notificaciones -->
                                 <a class="ml-7 bg-gray-300 rounded-full flex flex-col justify-center items-center text-sm font-extrabold relative p-1"
                                     href="{{ route('notifications') }}">
