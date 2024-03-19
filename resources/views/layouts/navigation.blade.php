@@ -132,6 +132,51 @@
                 <x-responsive-nav-link :href="route('vacancies.create')" :active="request()->routeIs('vacancies.create')">
                     {{ __('Crear oferta de empleo') }}
                 </x-responsive-nav-link>
+
+                @if (auth()->user()->role === 2)
+                    <div class="flex items-center gap-4">
+                        @if (auth()->user()->unreadNotifications->count() > 0)
+                            <div class="flex gap-2 items-center">
+                                <!-- Ícono de campana cuando hay notificaciones -->
+                                <a class="ml-7 bg-indigo-600 hover:bg-indigo-600 rounded-full flex flex-col justify-center items-center text-sm font-extrabold relative p-1"
+                                    href="{{ route('notifications') }}">
+                                    <div class="text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+                                        </svg>
+                                    </div>
+                                    <span
+                                        class="absolute top-0 right-5 -mt-1 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
+                                        {{ auth()->user()->unreadNotifications->count() }}
+                                    </span>
+                                </a>
+                                <p class="font-medium text-base text-gray-500">Notificaciones</p>
+                            </div>
+                        @else
+                            <!-- Ícono de campana cuando no hay notificaciones -->
+                            <div class="flex gap-2 items-center">
+                                <!-- Ícono de campana cuando hay notificaciones -->
+                                <a class="ml-7 bg-gray-300 rounded-full flex flex-col justify-center items-center text-sm font-extrabold relative p-1"
+                                    href="{{ route('notifications') }}">
+                                    <div class="text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+                                        </svg>
+                                    </div>
+                                    <span
+                                        class="absolute top-0 right-5 -mt-1 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-red-100 bg-red-300 rounded-full">
+                                        {{ auth()->user()->unreadNotifications->count() }}
+                                    </span>
+                                </a>
+                                <p class="font-medium text-base text-gray-300">Notificaciones</p>
+                            </div>
+                        @endif
+                    </div>
+                @endif
             </div>
 
             <!-- Responsive Settings Options -->
