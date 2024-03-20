@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 // Vacancies
 Route::get('/dashboard', [VacancyController::class, 'index'])->middleware(['auth', 'verified'])->name('vacancies.index');
@@ -27,7 +27,7 @@ Route::get('/vacancies/{vacancy}/edit', [VacancyController::class, 'edit'])->mid
 Route::get('/vacancies/{vacancy}', [VacancyController::class, 'show'])->name('vacancies.show');
 
 // Notifications
-Route::get('/notifications', NotificationController::class)->name('notifications');
+Route::get('/notifications', NotificationController::class)->middleware(['auth', 'verified', 'rol.recruiter'])->name('notifications');
 
 // Profile
 Route::middleware('auth', 'verified')->group(function () {
