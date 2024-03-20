@@ -158,7 +158,9 @@
                                         {{ auth()->user()->unreadNotifications->count() }}
                                     </span>
                                 </a>
-                                <p class="font-medium text-base text-gray-500">Notificaciones</p>
+                                <p class="font-medium text-base text-gray-500">
+                                    @choice('Notificación|Notificaciones', auth()->user()->unreadNotifications->count())
+                                </p>
                             </div>
                         @else
                             <!-- Ícono de campana cuando no hay notificaciones -->
