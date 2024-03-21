@@ -12,9 +12,10 @@ class FilterVacancies extends Component
     public $category;
     public $salary;
 
+
     public function readFormData()
     {
-        dd("buscando");
+        $this->dispatch('searchTerms', $this->term, $this->category, $this->salary);
     }
 
     public function render()
