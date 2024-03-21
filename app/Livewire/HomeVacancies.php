@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class HomeVacancies extends Component
 {
+    const ELEMENTS_BY_PAGE = 10;
+
     public $term;
     public $category;
     public $salary;
@@ -23,7 +25,11 @@ class HomeVacancies extends Component
 
     public function render()
     {
-        $vacancies = Vacancy::all();
+        // $vacancies = Vacancy::all();
+
+        $vacancies = Vacancy::when($this->term, function ($query) {
+            $query->where('title', 'LIKE', '%' . $this->term . "%");
+        })->paginate(self::ELEMENTS_BY_PAGE);
 
         return view('livewire.home-vacancies', [
             'vacancies' => $vacancies
