@@ -51,31 +51,33 @@
                         </h1>
                 @endif
 
-                @forelse ($notificationsHistory as $notification)
-                    <div class="p-5 text-gray-400 border border-gray-200 lg:flex justify-between lg:items-center">
-                        <div>
-                            <p>Tienes un nuevo candidato en:
-                                <span class="font-bold">{{ $notification->data['vacancy_name'] }}</span>
-                            </p>
-                            <p>
-                                <span class="font-bold">{{ $notification->created_at->diffForHumans() }}</span>
-                            </p>
-                        </div>
-                        <div class="mt-5 lg:mt-0">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 bg-indigo-400 border
+                <div class="divide-y divide-gray-200">
+                    @forelse ($notificationsHistory as $notification)
+                        <div class="p-5 text-gray-400 lg:flex justify-between lg:items-center">
+                            <div>
+                                <p>Tienes un nuevo candidato en:
+                                    <span class="font-bold">{{ $notification->data['vacancy_name'] }}</span>
+                                </p>
+                                <p>
+                                    <span class="font-bold">{{ $notification->created_at->diffForHumans() }}</span>
+                                </p>
+                            </div>
+                            <div class="mt-5 lg:mt-0">
+                                <a href="{{ route('candidates.index', $notification->data['vacancy_id']) }}"
+                                    class="inline-flex items-center px-4 py-2 bg-indigo-400 border
                                     border-transparent rounded-md font-semibold text-xs text-white uppercase
                                     tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 dark:focus:bg-indigo
                                     active:bg-indigo-900 dark:active:bg-indigo-700 focus:outline-none focus:ring-2
                                     focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-indigo-200
                                     transition ease-in-out duration-150">
-                                Ver candidatos
-                            </a>
+                                    Ver candidatos
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                @empty
-                    {{-- No mostramos nada si no existen notificaciones históricas --}}
-                @endforelse
+                    @empty
+                        {{-- No mostramos nada si no existen notificaciones históricas --}}
+                    @endforelse
+                </div>
             </div>
         </div>
     </div>

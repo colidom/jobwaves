@@ -14,10 +14,16 @@
 
                 <div class="flex flex-col md:flex-row items-stretch gap-3 mt-5 md:mt-0">
                     <a href="{{ route('candidates.index', $vacancy) }}"
-                        class="bg-slate-800 hover:bg-slate-700 py-2 px-4 rounded-lg text-white text-sm font-bold
-                        uppercase text-center">
-                        {{ __('Candidatos') }}
+                        class="bg-slate-800 hover:bg-slate-700 py-2 px-4 rounded-lg text-white text-sm font-bold uppercase text-center">
+
+                        @if ($vacancy->candidates->isNotEmpty())
+                            {{ $vacancy->candidates->count() }}
+                            {{ Str::plural('candidato', $vacancy->candidates->count()) }}
+                        @else
+                            0 {{ __('candidatos') }}
+                        @endif
                     </a>
+
                     <a href="{{ route('vacancies.edit', $vacancy->id) }}"
                         class="bg-blue-800 hover:bg-blue-700 py-2 px-4 rounded-lg text-white text-sm font-bold
                         uppercase text-center">
