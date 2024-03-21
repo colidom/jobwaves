@@ -14,6 +14,8 @@
                                 href="{{ route('vacancies.show', $vacancy->id) }}">{{ $vacancy->title }}</a>
 
                             <p class="text-base text-gray-600 mb-1">{{ $vacancy->company_name }}</p>
+                            <p class="text-base text-gray-600 mb-1">{{ $vacancy->salary->salary }}</p>
+                            <p class="text-xs font-bold text-gray-600 mb-1">{{ $vacancy->category->category }}</p>
                             <p class="font-bold text-xs text-gray-600">Último día para inscribirte:
                                 <span class="font-normal">{{ $vacancy->end_date->format('d/m/Y') }}</span>
                             </p>
@@ -30,7 +32,8 @@
                         </div>
                     </div>
                 @empty
-                    <p class="p-3 text-center text-sm text-gray-600">Aún no existen ofertas de empleo.</p>
+                    <p class="p-3 text-center text-sm text-gray-600">No existen ofertas de empleo con estos criterios de
+                        búsqueda.</p>
                 @endforelse
             </div>
         </div>
