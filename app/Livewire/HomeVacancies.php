@@ -25,8 +25,6 @@ class HomeVacancies extends Component
 
     public function render()
     {
-        // $vacancies = Vacancy::all();
-
         $vacancies = Vacancy::when($this->term, function ($query) {
             $query->where('title', 'LIKE', '%' . $this->term . "%");
         })->paginate(self::ELEMENTS_BY_PAGE);
