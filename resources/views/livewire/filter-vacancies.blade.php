@@ -1,22 +1,23 @@
 <div class="bg-gray-200 py-10">
-    <h2 class="text-2xl md:text-4xl text-gray-700 text-center font-extrabold my-5">Buscar y Filtrar Ofertas de empleo
+    <h2 class="text-2xl md:text-4xl text-gray-700 text-center font-extrabold my-5">
+        {{ 'Buscar y Filtrar Ofertas de empleo' }}
     </h2>
 
     <div class="max-w-7xl mx-auto">
         <form wire:submit.prevent='readFormData'>
             <div class="md:grid md:grid-cols-3 gap-5">
                 <div class="mb-5">
-                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold " for="term">Término de
-                        Búsqueda
+                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold "
+                        for="term">{{ __('Criterios de Búsqueda') }}
                     </label>
-                    <input id="term" type="text" placeholder="Buscar por Término: ej. Laravel"
+                    <input id="term" type="text" placeholder="Buscar por criterio: ej. Laravel"
                         class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring
                         focus:ring-indigo-200 focus:ring-opacity-50 w-full"
                         wire:model="term" />
                 </div>
 
                 <div class="mb-5">
-                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold">Categoría</label>
+                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold">{{ 'Categoría' }}</label>
                     <select wire:model="category" class="border-gray-300 p-2 w-full">
                         <option>--Seleccione--</option>
 
@@ -27,7 +28,7 @@
                 </div>
 
                 <div class="mb-5">
-                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold">Salario Mensual</label>
+                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold">{{ 'Salario Mensual' }}</label>
                     <select wire:model="salary" class="border-gray-300 p-2 w-full">
                         <option>-- Seleccione --</option>
                         @foreach ($salaries as $salary)
