@@ -3,10 +3,10 @@
         <div class=" max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
             <div class="relative">
                 <h2 class="text-center text-4xl leading-8 font-extrabold tracking-tight text-indigo-600 sm:text-6xl">
-                    Encuentra un trabajo en el sector IT de forma remota</h2>
-                <p class="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">Encuentra el trabajo de tus sueños en
-                    una empresa del sector IT. ¡Tenemos vacantes para front end developer, backend, devops, mobile y
-                    mucho más!</p>
+                    {{ __('Encuentra un empleo en el sector IT de forma remota') }}</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">
+                    {{ __('Encuentra la oportunidad profesional de tus sueños en una destacada empresa del sector de Tecnologías de la Información (IT). ¡Explora nuestras vacantes disponibles para roles de desarrollador front-end, back-end, DevOps, móvil y mucho más!') }}
+                </p>
             </div>
         </div>
     </div>
