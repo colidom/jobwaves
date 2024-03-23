@@ -9,13 +9,13 @@
             <div class="bg-white dark:bg-gray-50 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-700 dark:text-gray-900">
                     <h1 class="text-2xl font-bold text-center my-10">
-                        Mis notificaciones
+                        {{ __('Mis notificaciones') }}
                     </h1>
 
                     @forelse ($notifications as $notification)
                         <div class="p-5 border border-gray-200 lg:flex justify-between lg:items-center">
                             <div>
-                                <p>Tienes un nuevo candidato en:
+                                <p>{{ __('Tienes un nuevo candidato en:') }}
                                     <span class="font-bold">{{ $notification->data['vacancy_name'] }}</span>
                                 </p>
                                 <p>
@@ -30,12 +30,12 @@
                                     active:bg-indigo-900 dark:active:bg-indigo-700 focus:outline-none focus:ring-2
                                     focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-indigo-200
                                     transition ease-in-out duration-150">
-                                    Ver candidatos
+                                    {{ __('Ver candidatos') }}
                                 </a>
                             </div>
                         </div>
                     @empty
-                        <p class="text-center text-gray-600">¡No existen nuevas notificaciones!</p>
+                        <p class="text-center text-gray-600">{{ __('¡No existen nuevas notificaciones!') }}</p>
                     @endforelse
 
                 </div>
@@ -47,7 +47,7 @@
                 @if (!$notificationsHistory->isEmpty())
                     <div class="p-6 text-gray-700 dark:text-gray-900">
                         <h1 class="text-2xl font-bold text-center my-10">
-                            Histórico de notificaciones
+                            {{ __('Notificaciones anteriores') }}
                         </h1>
                 @endif
 
@@ -55,7 +55,8 @@
                     @forelse ($notificationsHistory as $notification)
                         <div class="p-5 text-gray-400 lg:flex justify-between lg:items-center">
                             <div>
-                                <p>Tienes un nuevo candidato en:
+                                <p>
+                                    {{ __('Tienes un nuevo candidato en:') }}
                                     <span class="font-bold">{{ $notification->data['vacancy_name'] }}</span>
                                 </p>
                                 <p>
@@ -70,7 +71,7 @@
                                     active:bg-indigo-900 dark:active:bg-indigo-700 focus:outline-none focus:ring-2
                                     focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-indigo-200
                                     transition ease-in-out duration-150">
-                                    Ver candidatos
+                                    {{ __('Ver candidatos') }}
                                 </a>
                             </div>
                         </div>
