@@ -36,8 +36,7 @@
             <p>
                 {{ __('¿Deseas aplicar a esta oferta de empleo?') }}
                 <a class="font-bold text-indigo-600"
-                    href="{{ route('register') }}">{{ __('¡Regístrate ahora para poder enviar tu
-                                                                                                                                                                candidatura!') }}</a>
+                    href="{{ route('register') }}">{{ __('¡Regístrate ahora para poder inscribirte en esta oferta de empleo!') }}</a>
             </p>
         </div>
     @else
