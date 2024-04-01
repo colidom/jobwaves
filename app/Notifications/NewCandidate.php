@@ -48,7 +48,7 @@ class NewCandidate extends Notification
             ->line('Has recibido un nuevo candidato en tu oferta de empleo: ' . $this->vacancy_name . ".")
             ->action('Ver notificaciones', $url)
             ->line('¡Gracias por utilizar JobWaves!')
-            ->salutation('Saludos, JobWaves');
+            ->salutation('Saludos,\n JobWaves');
     }
 
 

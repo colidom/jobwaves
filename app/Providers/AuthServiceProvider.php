@@ -27,7 +27,7 @@ class AuthServiceProvider extends ServiceProvider
         VerifyEmail::toMailUsing(function ($notifable, $url) {
             return (new MailMessage)
                 ->subject('Verificar cuenta de correo')
-                ->line('Para activar tu cuenta haz clic en Confirmar cuenta para activar cuenta.')
+                ->line('Para activar tu cuenta, haz clic en el botón "Confirmar cuenta" de a continuación.')
                 ->action('Confirmar cuenta', $url)
                 ->line('Si no has creado esta cuenta, puedes ignorar este mensaje.');
         });
