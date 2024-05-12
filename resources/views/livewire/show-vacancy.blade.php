@@ -35,7 +35,7 @@
         <div class="mt-5 bg-gray-100 border border-dashed p-5 text-center">
             <p>
                 {{ __('¿Deseas aplicar a esta oferta de empleo?') }}
-                <a class="font-bold text-cyan-600"
+                <a class="font-bold text-sky-600"
                     href="{{ route('register') }}">{{ __('¡Regístrate ahora para poder inscribirte en esta oferta de empleo!') }}</a>
             </p>
         </div>

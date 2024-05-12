@@ -30,7 +30,7 @@
         <div class="mt-4">
             <x-input-label for="role" :value="__('¿Qué tipo de cuenta deseas crear?')" />
             <select name="role" id="role"
-                class="border-gray-300 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-cyan-500 dark:focus:border-cyan-600 focus:ring-cyan-500 dark:focus:ring-cyan-600 rounded-md shadow-sm w-full"
+                class="border-gray-300 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-sky-500 dark:focus:border-sky-600 focus:ring-sky-500 dark:focus:ring-sky-600 rounded-md shadow-sm w-full"
                 required>
                 <option value="">--- Seleccione un rol ---</option>
                 <option value="1">Desarrollador - Obtener empleo</option>

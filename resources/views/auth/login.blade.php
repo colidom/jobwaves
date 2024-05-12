@@ -27,7 +27,7 @@
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox"
-                    class="rounded dark:bg-gray-100 border-gray-300 dark:border-gray-700 text-cyan-600 shadow-sm focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:focus:ring-offset-gray-100"
+                    class="rounded dark:bg-gray-100 border-gray-300 dark:border-gray-700 text-sky-600 shadow-sm focus:ring-sky-500 dark:focus:ring-sky-600 dark:focus:ring-offset-gray-100"
                     name="remember">
                 <span class="ms-2 text-sm text-gray-700 dark:text-gray-700">{{ __('Recuérdame') }}</span>
             </label>
