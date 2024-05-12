@@ -15,7 +15,7 @@
     <div>
         <x-input-label for="salary" :value="__('Rango salarial (anual)')" />
         <select wire:model="salary" id="salary"
-            class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full">
+            class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-cyan-500 dark:focus:border-cyan-600 focus:ring-cyan-500 dark:focus:ring-cyan-600 rounded-md shadow-sm w-full">
             <option>{{ __('-- Seleccione --') }}</option>
             @foreach ($salaries as $salary)
                 <option value="{{ $salary->id }}">{{ $salary->salary }}</option>
@@ -30,7 +30,7 @@
     <div>
         <x-input-label for="category" :value="__('Categoría')" />
         <select wire:model="category" id="category"
-            class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full">
+            class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-cyan-500 dark:focus:border-cyan-600 focus:ring-cyan-500 dark:focus:ring-cyan-600 rounded-md shadow-sm w-full">
             <option>{{ __('-- Seleccione --') }}</option>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->category }}</option>
@@ -65,7 +65,7 @@
     <div>
         <x-input-label for="job_description" :value="__('Descripción')" />
         <textarea id="job_description"
-            class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full h-72"
+            class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-cyan-500 dark:focus:border-cyan-600 focus:ring-cyan-500 dark:focus:ring-cyan-600 rounded-md shadow-sm w-full h-72"
             type="text" wire:model="job_description" :value="old('job_description')"
             placeholder="Descripción general del puesto de trabajo"></textarea>
         @error('job_description')

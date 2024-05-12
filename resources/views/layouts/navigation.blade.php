@@ -43,7 +43,7 @@
                         <div class="flex items-center gap-4">
                             @if (auth()->user()->unreadNotifications->count() > 0)
                                 <!-- Ícono de campana cuando hay notificaciones -->
-                                <a class="right-3 bg-indigo-600 hover:bg-indigo-600 rounded-full flex flex-col justify-center items-center text-sm font-extrabold relative p-1"
+                                <a class="right-3 bg-cyan-600 hover:bg-cyan-600 rounded-full flex flex-col justify-center items-center text-sm font-extrabold relative p-1"
                                     href="{{ route('notifications') }}">
                                     <div class="text-white">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -158,7 +158,7 @@
                         @if (auth()->user()->unreadNotifications->count() > 0)
                             <div class="flex gap-2 items-center mt-3">
                                 <!-- Ícono de campana cuando hay notificaciones -->
-                                <a class="ml-7 bg-indigo-600 hover:bg-indigo-600 rounded-full flex flex-col justify-center items-center text-sm font-extrabold relative p-1"
+                                <a class="ml-7 bg-cyan-600 hover:bg-cyan-600 rounded-full flex flex-col justify-center items-center text-sm font-extrabold relative p-1"
                                     href="{{ route('notifications') }}">
                                     <div class="text-white">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

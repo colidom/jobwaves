@@ -11,8 +11,8 @@
                         for="term">{{ __('Criterios de Búsqueda') }}
                     </label>
                     <input id="term" type="text" placeholder="Buscar por criterio: ej. Laravel"
-                        class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring
-                        focus:ring-indigo-200 focus:ring-opacity-50 w-full"
+                        class="rounded-md shadow-sm border-gray-300 focus:border-cyan-300 focus:ring
+                        focus:ring-cyan-200 focus:ring-opacity-50 w-full"
                         wire:model="term" />
                 </div>
 
@@ -40,11 +40,11 @@
 
             <div class="flex justify-end">
                 <input type="submit"
-                    class="block text-center px-4 py-2 bg-indigo-600 border
+                    class="block text-center px-4 py-2 bg-cyan-600 border
                     border-transparent rounded-md font-semibold text-xs text-white uppercase cursor-pointer
-                    tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 dark:focus:bg-indigo
-                    active:bg-indigo-900 dark:active:bg-indigo-700 focus:outline-none focus:ring-2
-                    focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-indigo-200
+                    tracking-widest hover:bg-cyan-700 focus:bg-cyan-700 dark:focus:bg-cyan
+                    active:bg-cyan-900 dark:active:bg-cyan-700 focus:outline-none focus:ring-2
+                    focus:ring-cyan-500 focus:ring-offset-2 dark:focus:ring-offset-cyan-200
                     transition ease-in-out duration-150"
                     value="Buscar" />
             </div>
