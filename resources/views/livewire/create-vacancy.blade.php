@@ -1,14 +1,14 @@
 <form action="" class="md:w-1/2 space-y-5" wire:submit.prevent='createVacancy'>
     <!-- Título -->
+    @csrf
     <div>
         <x-input-label for="title" :value="__('Título')" />
-        <x-text-input id="title" class="block mt-1 w-full" type="text" wire:model="title" :value="old('title')"
+        <x-text-input id="title" class="block mt-1 w-full" type="text" wire:model="title"
             placeholder="Título de la oferta de empleo" />
 
         @error('title')
             <livewire:show-alert :message="$message" />
         @enderror
-
     </div>
 
     <!-- Salario -->
@@ -45,7 +45,7 @@
     <div>
         <x-input-label for="company_wire:model" :value="__('Empresa')" />
         <x-text-input id="company_name" class="block mt-1 w-full" type="text" wire:model="company_name"
-            :value="old('company_name')" placeholder="Nombre de la empresa" />
+            placeholder="Nombre de la empresa" />
         @error('company_name')
             <livewire:show-alert :message="$message" />
         @enderror
@@ -54,8 +54,7 @@
     <!-- Último día -->
     <div>
         <x-input-label for="end_date" :value="__('Último día para inscribirse')" />
-        <x-text-input id="end_date" class="block mt-1 w-full" type="date" wire:model="end_date"
-            :value="old('end_date')" />
+        <x-text-input id="end_date" class="block mt-1 w-full" type="date" wire:model="end_date" />
         @error('end_date')
             <livewire:show-alert :message="$message" />
         @enderror
@@ -66,8 +65,7 @@
         <x-input-label for="job_description" :value="__('Descripción')" />
         <textarea id="job_description"
             class="border-gray-300 mt-1 dark:border-gray-700 dark:bg-gray-100 dark:text-gray-700 focus:border-sky-500 dark:focus:border-sky-600 focus:ring-sky-500 dark:focus:ring-sky-600 rounded-md shadow-sm w-full h-72"
-            type="text" wire:model="job_description" :value="old('job_description')"
-            placeholder="Descripción general del puesto de trabajo"></textarea>
+            wire:model="job_description" placeholder="Descripción general del puesto de trabajo"></textarea>
         @error('job_description')
             <livewire:show-alert :message="$message" />
         @enderror
