@@ -23,7 +23,7 @@
                                 </p>
                             </div>
                             <div class="mt-5 lg:mt-0">
-                                <a href="#"
+                                <a href="/candidates/{{ $notification->data['vacancy_id'] }}"
                                     class="block text-center px-4 py-2 bg-sky-600 border
                                     border-transparent rounded-md font-semibold text-xs text-white uppercase
                                     tracking-widest hover:bg-sky-700 focus:bg-sky-700 dark:focus:bg-sky
